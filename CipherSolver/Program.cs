@@ -129,7 +129,18 @@ namespace CipherSolver
                 MatchCollection mc2 = Regex.Matches(temp, @"(?<=\-)(.*?)(?=\-)");
                 foreach (Match m2 in mc2)
                 {
-                    cipherints.Add(Convert.ToInt32(m2.ToString()));
+                    temp = "";
+                    foreach (char c in m2.ToString())
+                    {
+                        if (Char.IsPunctuation(c))
+                        {
+                            cipherints.Add(Convert.ToInt32(temp));
+                            temp = (c - 64).ToString();
+                        }
+                        else
+                            temp = temp + c;
+                    }
+                    cipherints.Add(Convert.ToInt32(temp));
                 }
                 cipherints.Add(-32);
             }
@@ -141,9 +152,19 @@ namespace CipherSolver
             Console.Write("Enter Key: ");
             string key = Console.ReadLine().ToUpper();
             string decoded = "";
+            int spaces = 0;
             for (int i = 0; i < cipher.Length; i++)
             {
-                decoded = decoded + shifter(cipher[i], key[i%key.Length]-65, encodeFlag);
+                if (cipher[i] == ' ')
+                {
+                    decoded = decoded + ' ';
+                    spaces++;
+                }
+                if (key[(i - spaces) % key.Length] == ' ')
+                {
+                    spaces--;
+                }
+                decoded = decoded + shifter(cipher[i], key[(i-spaces)%key.Length]-65, encodeFlag);
             }
             return decoded;
         }
