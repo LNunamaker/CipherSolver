@@ -4,3 +4,5 @@ e:\users\logan\documents\visual studio 2013\Projects\CipherSolver\CipherSolver\b
 e:\users\logan\documents\visual studio 2013\Projects\CipherSolver\CipherSolver\obj\Debug\CipherSolver.csprojResolveAssemblyReference.cache
 e:\users\logan\documents\visual studio 2013\Projects\CipherSolver\CipherSolver\obj\Debug\CipherSolver.exe
 e:\users\logan\documents\visual studio 2013\Projects\CipherSolver\CipherSolver\obj\Debug\CipherSolver.pdb
+e:\users\logan\documents\visual studio 2013\Projects\CipherSolver\CipherSolver\obj\Debug\CipherSolver.Form1.resources
+e:\users\logan\documents\visual studio 2013\Projects\CipherSolver\CipherSolver\obj\Debug\CipherSolver.csproj.GenerateResource.Cache
